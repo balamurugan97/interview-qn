@@ -1,0 +1,2 @@
+technical discussion
+1. java memory model

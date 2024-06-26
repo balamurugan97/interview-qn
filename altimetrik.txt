@@ -1,0 +1,21 @@
+1. DSA hankerrank test
+sort algorithm coding 
+DSA question 
+java basic tricky question 
+
+gc collection null 
+
+par p =new ch
+p.name; - it takes parent member
+
+
+
+2. technical discussion1
+find 3 maximum integer in array without sorting first largest number , second and third
+
+3.technical discussion2
+
+linkedlist implementation and node deletion
+sort the int array based on occurance of element
+
+4. final round

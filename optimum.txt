@@ -1,0 +1,91 @@
+Level1 :
+
+output of below program?
+public class TestA {
+	public static void main(String args[]) {
+		TestA a = new TestA();
+		a.printInt();
+	}
+ 
+	private void printInt() {
+		static int m=8;
+		m++;
+		m=m--;
+		System.out.println(" The Value of m is : "+m);
+	}
+}
+-------------------------------------------------------------------------------------------------------------
+
+package com.minutes;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Sample4 {
+
+    public static void main(String a[]){
+        List<Employee> employeeList = new ArrayList<>();
+        Employee employee = new Employee();
+        employee.setName("jim");
+        employee.setSalary(1000);
+        employeeList.add(employee);
+        Employee employee1 = new Employee();
+        employeeList.stream().sorted((x,y)->y.getSalary().compareTo(x.getSalary())).limit(5).sorted(Comparator.comparing(Employee::getName)).collect(Collectors.toList());
+    }
+}
+-----------------------------------------------------------------------------------------------
+Dubai based banking project 
+azure devops
+
+
+Level2:
+------
+
+package com.minutes;
+
+import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+public class NonRepetitiveChar {
+    public static void main(String a[]){
+        String str = "Lava programming language";
+        Map<Character,Integer> charOcc = new LinkedHashMap<>();
+
+        for(int i=0;i<str.length();i++){
+            if(charOcc.containsKey(Character.toLowerCase(str.charAt(i)))){
+                charOcc.put(Character.toLowerCase(str.charAt(i)),charOcc.get(str.charAt(i)).intValue()+1);
+            } else {
+                charOcc.put(Character.toLowerCase(str.charAt(i)),1);
+            }
+        }
+        Optional<Map.Entry<Character, Integer>> entry = charOcc.entrySet().stream().filter(x->x.getValue()==1).findFirst();
+       if(entry.isPresent()){
+           System.out.println(entry.get().getKey());
+       }
+    }
+}
+
+package com.minutes;
+
+public class ReverseStr {
+
+    public static void main(String a[]){
+        String str = "a 12  xyz";
+        int j=0;
+        StringBuilder output= new StringBuilder();
+        for(int i=str.length()-1;i>=0;i--){
+            if(str.charAt(j)==' '){
+                output.append(' ');
+            }
+            if(str.charAt(i)!=' '){
+                output.append(str.charAt(i));
+            }
+            j++;
+        }
+        System.out.println(output);
+    }
+}
+

@@ -1,0 +1,57 @@
+You have a table of employees with id, name, email address, salary etc. Write an SQL query to print names of all the employees whose salary greater than or equal to the employee with first name "Rita". Candidate must be crisp in the syntax of the SQL query. Follow Up Question: Now, assume that you have two tables: "employees" and "salaries". The employee table has basic information: ID, first name, last name, email address, address etc. Salaries table has employee-id and salary. Query to be executed is the same: "List names of all the employees whose salary is greater than or equal to Rita's salary".
+
+
+question1:
+
+select id,name,[email address],salary from employees where salary>=(select top 1 salary from employees where name like 'Rita%')
+
+question2:
+
+select name from employees e inner join salary s on s.[employee-id] = e.ID where s.salary >= (
+select salary from employees e inner join salary s on s.employee-id = e.ID where [first name] = 'Rita')
+
+
+
+
+How do you swap two numbers without using a third variable in Java?
+
+class swapNumbers{
+	public static void main(String []){
+		Scanner s = new Scanner(System.in);
+		int a = s.nextInt();
+		int b = s.nextInt();
+		b = a+b;
+		a = b-a;
+		b = b-a;
+		System.out.print("swap number A is"+a+"B is"+b); 
+	}
+}
+
+Check if two words are Anagrams like, "fired" and "fried"
+
+class Anagram{
+	public static void main(String a[]){
+		Scanner s = new Scanner(System.in);
+		String a = s.next();
+		String b = s.next();
+		if(a.length() == b.length()){
+			int matchCount = 0;
+			for(int i =0;i<a.length();i++){
+				for(int j=0;j<b.length;b++){
+					if(a.charAt(i)==b.charAt(i)){
+						matchCount++;
+						break;
+					} else {
+ 						continue;
+					}
+				}
+			}
+			if(matchCount == a.length()){
+				System.out.println("two words are anagrams");
+			}
+		} else {
+			System.out.println("Not Anagram");
+		}
+
+	}
+}

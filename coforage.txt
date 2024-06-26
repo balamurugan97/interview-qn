@@ -1,0 +1,73 @@
+Write program to print even and odd number in sequential using threads
+
+Write a program swap positive number left side, negative number right side AND zeros into middle without sorting
+
+package com.minutes;
+
+public class SampleThread{
+    public static void main(String a[]){
+
+        for(int i=1;i<100;i++){
+            int finalI = i;
+            Runnable r = new Runnable(){
+                @Override
+                public void run() {
+                    if(finalI %2==0){
+                        System.out.println(finalI);
+                    }
+                }
+            };
+            Runnable r2 = new Runnable() {
+                @Override
+                public void run() {
+                    if(finalI%2!=0){
+                        System.out.println(finalI);
+                    }
+                }
+            };
+            r.run();
+            r2.run();
+        }
+    }
+}
+
+
+
+package com.minutes;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class SwapInt {
+    public static void main(String a[]){
+        int[] source = {-2,3,5,-1,9,0,-3,0,5,-4};
+        List<Integer> positiveNo = new ArrayList<>();
+        List<Integer> negativeNo = new ArrayList<>();
+        List<Integer> zeroInt = new ArrayList<>();
+        int[] result = new int[source.length];
+        for(int i=0;i<source.length;i++){
+            if(source[i]>0){
+                positiveNo.add(source[i]);
+            } else if(source[i]<0){
+                negativeNo.add(source[i]);
+            } else {
+                zeroInt.add(source[i]);
+            }
+        }
+        int z=0;
+        for( z=0;z<negativeNo.size();z++){
+            result[z]=negativeNo.get(z);
+        }
+        for (int j=0;j<zeroInt.size();j++){
+            result[z]= zeroInt.get(j);
+            z++;
+        }
+        for (int j=0;j<positiveNo.size();j++){
+            result[z]= positiveNo.get(j);
+            z++;
+        }
+        for(int i=0;i<result.length;i++){
+            System.out.println(result[i]+"  ");
+        }
+    }
+}
